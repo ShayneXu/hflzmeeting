@@ -10,10 +10,15 @@
   <header class="site-header">
     <div class="container header-inner">
       <div class="brand">
-        <h1>合肥六中2022届27班</h1>
-        <p class="subtitle">部分团体代表座谈会</p>
+        <h1>合肥六中2022届27班部分团体代表座谈会</h1>
       </div>
-      <nav class="top-nav">
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span class="sr-only">打开导航</span>
+      </button>
+      <nav class="top-nav" id="site-nav">
         <a href="#cover">首页</a>
         <a href="#overview">会议概况</a>
         <a href="#agenda">参会活动流程</a>
@@ -71,7 +76,8 @@
             </div>
             <div class="group">
               <strong>更多代表名单：</strong>
-              <p class="note"></p>
+              <ul id="delegates-list" class="delegates-list"></ul>
+              <p class="note">（参会确认提交后，会自动同步到这里；也可手动补充名单）</p>
             </div>
           </div>
         </div>
@@ -140,7 +146,7 @@
             <button type="submit">提交确认（示例：本地提示）</button>
           </div>
         </form>
-        <p class="note">提示：此表单为静态页面示例。要收集数据，请替换为第三方表单服务或后端接口（如 Google Forms、腾讯问卷或邮件接收）。</p>
+        <p class="note">提示：此表单为静态页面示例。信息会先同步到当前页面的“更多代表名单”，并保存在浏览器本地存储中；如需跨设备共享，请替换为后端接口或第三方表单服务。</p>
       </div>
     </section>
 

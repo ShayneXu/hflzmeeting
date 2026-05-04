@@ -18,6 +18,9 @@ body{font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvet
 .top-nav{display:flex;flex-wrap:wrap;justify-content:flex-end;gap:8px}
 .top-nav a{color:var(--muted);text-decoration:none;font-size:14px;padding:4px 0}
 .top-nav a:hover{color:var(--primary)}
+.nav-toggle{display:none;align-items:center;justify-content:center;flex-direction:column;gap:4px;width:42px;height:42px;border:1px solid #e6eefc;border-radius:10px;background:#fff;cursor:pointer}
+.nav-toggle span{display:block;width:18px;height:2px;background:var(--primary);border-radius:999px}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
 
 .cover{padding:36px 0;background:linear-gradient(180deg,#ffffff, #f8fbff)}
 .cover-inner{display:flex;gap:20px;align-items:center}
@@ -36,6 +39,9 @@ body{font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvet
 .overview-list,.notice-list{list-style:none;padding:0;margin:0}
 .overview-list li,.notice-list li{padding:6px 0;border-bottom:1px dashed #eef5ff;color:#2b3b4a}
 .delegates .group{margin-top:12px}
+.delegates-list{list-style:none;padding:0;margin:8px 0 0;display:grid;gap:8px}
+.delegates-list li{padding:8px 10px;background:#f8fbff;border:1px solid #e6eefc;border-radius:8px;color:#2b3b4a}
+.delegates-list .meta{display:block;color:var(--muted);font-size:12px;margin-top:2px}
 .agenda-list{padding-left:18px}
 .agenda-list li{margin:8px 0}
 .note{color:var(--muted);font-size:13px}
@@ -65,10 +71,12 @@ body{font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvet
   .cover-inner{flex-direction:column;align-items:flex-start}
   .cover-right{width:100%}
   .portrait-placeholder{max-width:360px}
-  .header-inner{flex-direction:column;align-items:flex-start}
-  .top-nav{margin-top:6px;justify-content:flex-start;overflow-x:auto;white-space:nowrap;padding-bottom:4px;width:100%}
-  .top-nav::-webkit-scrollbar{display:none}
-  .top-nav a{flex:0 0 auto;font-size:13px;padding:6px 10px;border:1px solid #e6eefc;border-radius:999px;background:#fff}
+  .header-inner{flex-wrap:wrap;align-items:center}
+  .nav-toggle{display:inline-flex;margin-left:auto}
+  .top-nav{display:none;order:3;flex-direction:column;align-items:stretch;justify-content:flex-start;width:100%;margin-top:8px;padding:10px;background:#fff;border:1px solid #e6eefc;border-radius:14px}
+  .top-nav.is-open{display:flex}
+  .top-nav a{display:block;font-size:14px;padding:10px 12px;border-radius:10px;background:#f8fbff;border:1px solid #eef5ff}
+  .top-nav a + a{margin-top:6px}
   .top-nav a:active{background:#f3f8ff}
   .rsvp-form{grid-template-columns:1fr}
   .gallery-view{max-width:100%}
